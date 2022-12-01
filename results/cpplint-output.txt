@@ -1,0 +1,5 @@
+./src/walker.cpp:38:  Is this a non-const reference? If so, make const or use a pointer: geometry_msgs::msg::Twist& motion  [runtime/references] [2]
+./src/walker.cpp:39:  Is this a non-const reference? If so, make const or use a pointer: geometry_msgs::msg::Twist& motion  [runtime/references] [2]
+./src/walker.cpp:60:  Is this a non-const reference? If so, make const or use a pointer: geometry_msgs::msg::Twist& motion  [runtime/references] [2]
+Done processing ./src/walker.cpp
+Total errors found: 3
