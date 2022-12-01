@@ -48,3 +48,8 @@ ros2 bag play working_with_gazebo/results/bag_output/
 * turtlebot3, installation can be found [here](https://ros2-industrial-workshop.readthedocs.io/en/latest/_source/navigation/ROS2-Turtlebot.html)
 * geometry_msgs
 * sensor_msgs
+
+## Results
+* Ros2 bag recorded [file](results/bag_output/) and is sqlite format.
+* cppcheck output is [here](results/cppcheck-output.txt).
+* cpplint output is [here](results/cpplint-output.txt).

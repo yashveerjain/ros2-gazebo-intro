@@ -1,0 +1,16 @@
+Checking src/walker.cpp ...
+src/walker.cpp:7:0: information: Include file: "geometry_msgs/msg/twist.hpp" not found. [missingInclude]
+
+^
+src/walker.cpp:8:0: information: Include file: "rclcpp/logger.hpp" not found. [missingInclude]
+
+^
+src/walker.cpp:9:0: information: Include file: "rclcpp/rclcpp.hpp" not found. [missingInclude]
+
+^
+src/walker.cpp:10:0: information: Include file: "sensor_msgs/msg/laser_scan.hpp" not found. [missingInclude]
+
+^
+src/walker.cpp:11:0: information: Include file: "std_msgs/msg/string.hpp" not found. [missingInclude]
+
+^
