@@ -11,10 +11,23 @@
 
 using namespace std::chrono_literals;
 
+/**
+ * @brief WalkerBrain, class will handle the collision avoidance and robot motion code
+ * 
+ */
 class WalkerBrain {
     public:
-        // WalkerBrain(rclcpp::Logger logger):logger(logger){}
+        /**
+         * @brief Construct a new Walker Brain object
+         * 
+         */
         WalkerBrain(){}
+        /**
+         * @brief Construct a new Walker Brain object
+         * 
+         * @param speed 
+         * @param angle 
+         */
         WalkerBrain(double speed, double angle){
             this->speed = speed;
             this->angle = angle;
@@ -74,8 +87,17 @@ class WalkerBrain {
         
 };
 
+/**
+ * @brief Walker is ros2 node which will publish the command velocity using WalkerBrain
+ * @details Walker node is also subscriber to laser_scan topic to get laser data 
+ * and use it for collision avoidance.
+ */
 class Walker : public rclcpp::Node{
     public:
+        /**
+         * @brief Construct a new Walker object
+         * 
+         */
         Walker():Node("walker"){
             RCLCPP_INFO_STREAM(this->get_logger(), "Started Walker Node");
             publisher_ = this->create_publisher<geometry_msgs::msg::Twist>("/walker/cmd_vel", 10);
@@ -85,6 +107,11 @@ class Walker : public rclcpp::Node{
             std::bind(&Walker::walk, this));
         }
     private:
+        /**
+         * @brief callback function used for publishing the velocity to 
+         * /walker/cmd_vel topic after making decision using WalkerBrain class
+         * 
+         */
         void walk(){
             subscription_ = this->create_subscription<sensor_msgs::msg::LaserScan>(
             "/scan", 10,
@@ -94,6 +121,11 @@ class Walker : public rclcpp::Node{
           publisher_->publish(motion);
           
         }
+        /**
+         * @brief callback function subscribed to scan topic and use laser scan data for collision avoidance
+         * 
+         * @param scan 
+         */
         void check_obstacle(const sensor_msgs::msg::LaserScan& scan) {
             brain.check_obstacle(scan);
             RCLCPP_INFO_STREAM(this->get_logger(), "subcribed /scan topic");
