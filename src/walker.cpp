@@ -76,10 +76,10 @@ class WalkerBrain {
   double angle = .1;       // rad/sec
   double speed = 0.1;      // m/sec
   double dist_thresh = 1;  // 1m is Object distance threshold
-  // between -45* (0.785) to 45*
+  // between -20* to 20*
   int front_view[2] = {
-      45,
-      315};  // Note: this is array index of range according to laser scan msg
+      20,
+      340};  // Note: this is array index of range according to laser scan msg
   bool obstacle_in_front_;
 
   /*
