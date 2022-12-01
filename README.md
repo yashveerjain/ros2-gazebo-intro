@@ -13,14 +13,14 @@ colcon build --packages-select working_with_gazebo
 ### To run with single launch file:
 * Inside the ros2_ws/src dir:
 ```
-ros2 launch working_with_gazebo/launch/robo_launch.py
+ros2 launch working_with_gazebo/launch/robo_launch.py  enable_recording:=False
 ```
 
 ### To run turtlebot and custom code separatly
 * In one terminal run :
 ```
 export TURTLEBOT3_MODEL=burger
-ros2 launch turtlebot3_gazebo empty_world.launch.py
+ros2 launch turtlebot3_gazebo empty_world.launch.py 
 ```
 * On another terminal run:
 ```
