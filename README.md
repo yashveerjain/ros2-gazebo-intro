@@ -4,7 +4,7 @@ This repo contains the introductory implementation of turtlebot3 in gazebo using
 ## Overview
 The robot using lidar scan detect the distance from the obstacle in 360 deg view,
 and if the obstacle lie in front (between -20 deg to 20 deg angle) of the robot within 1 meter distance, the robot will turn to left until it avoided the obstacles.
----
+
 ## Installation
 * Inside the ros2_ws (ros 2 working space) dir:
 ```
