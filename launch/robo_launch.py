@@ -23,7 +23,7 @@ def generate_launch_description():
             PythonLaunchDescriptionSource(
                 PathJoinSubstitution([
                     FindPackageShare('turtlebot3_gazebo'),
-                    'launch/empty_world.launch.py']))  
+                    'launch/turtlebot3_world.launch.py']))  
         ),
     Node(
             package='working_with_gazebo',
@@ -44,7 +44,16 @@ def generate_launch_description():
                 '/cmd_vel ',
                 '/scan ',
                 '/imu ',
-                '/odom '
+                '/odom ',
+                '/clock ',
+                '/joint_states ',
+                '/parameter_events ',
+                '/performance_metrics ',
+                '/robot_description ',
+                '/rosout ',
+                '/scan ',
+                '/tf ',
+                '/tf_static '
             ]],
             shell=True
         ),])
